@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Module2Problem3"/>
+        <attribute name="authors" value="daria"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-01 10:25:50 AM"/>
+        <attribute name="created" value="ZGFyaWE7RFVGRlk7MjAyNi0wOS0wMTsxMDoyMDoxNCBBTTsyMTUy"/>
+        <attribute name="edited" value="ZGFyaWE7RFVGRlk7MjAyNi0wOS0wMTsxMDoyNTo1MCBBTTsxOzIyNjU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lengthOfRec" type="Real" array="False" size=""/>
+            <declare name="widthOfRec" type="Real" array="False" size=""/>
+            <declare name="area" type="Real" array="False" size=""/>
+            <declare name="circumference" type="Real" array="False" size=""/>
+            <input variable="lengthOfRec"/>
+            <input variable="widthOfRec"/>
+            <assign variable="area" expression="lengthOfRec * widthOfRec"/>
+            <assign variable="circumference" expression="2 * lengthOfRec + 2 * widthOfRec"/>
+            <output expression="area" newline="True"/>
+            <output expression="circumference" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

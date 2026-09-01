@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Module2Problem4"/>
+        <attribute name="authors" value="daria"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-01 10:31:08 AM"/>
+        <attribute name="created" value="ZGFyaWE7RFVGRlk7MjAyNi0wOS0wMTsxMDoyNTo1NCBBTTsyMTYx"/>
+        <attribute name="edited" value="ZGFyaWE7RFVGRlk7MjAyNi0wOS0wMTsxMDozMTowOCBBTTsxOzIyNjU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="takenCredits" type="Real" array="False" size=""/>
+            <declare name="totalTuition" type="Real" array="False" size=""/>
+            <declare name="labFee" type="Real" array="False" size=""/>
+            <input variable="lastName"/>
+            <input variable="takenCredits"/>
+            <assign variable="labFee" expression="100"/>
+            <assign variable="totalTuition" expression="takenCredits * 250 + labFee"/>
+            <output expression="lastName" newline="True"/>
+            <output expression="totalTuition" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

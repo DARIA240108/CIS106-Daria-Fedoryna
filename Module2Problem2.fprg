@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Module2Problem2"/>
+        <attribute name="authors" value="daria"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-01 10:19:50 AM"/>
+        <attribute name="created" value="ZGFyaWE7RFVGRlk7MjAyNi0wOS0wMTsxMDoxNDo0MiBBTTsyMTU2"/>
+        <attribute name="edited" value="ZGFyaWE7RFVGRlk7MjAyNi0wOS0wMTsxMDoxOTo1MCBBTTsxOzIyNjg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="hours" type="Real" array="False" size=""/>
+            <declare name="payRate" type="Real" array="False" size=""/>
+            <declare name="grossPay" type="Real" array="False" size=""/>
+            <input variable="lastName"/>
+            <input variable="hours"/>
+            <input variable="payRate"/>
+            <assign variable="grossPay" expression="hours * payRate"/>
+            <output expression="lastName" newline="True"/>
+            <output expression="grossPay" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
