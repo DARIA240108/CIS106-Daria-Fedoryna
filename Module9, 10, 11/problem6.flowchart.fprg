@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="problem6.flowchart"/>
+        <attribute name="authors" value="daria"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-02 06:06:01 PM"/>
+        <attribute name="created" value="ZGFyaWE7RFVGRlk7MjAyNi0xMC0wMjswNTo1NDowOSBQTTsyMTc1"/>
+        <attribute name="edited" value="ZGFyaWE7RFVGRlk7MjAyNi0xMC0wMjswNjowNjowMSBQTTsxOzIyNzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="score1" type="Real" array="False" size=""/>
+            <declare name="score2" type="Real" array="False" size=""/>
+            <declare name="score3" type="Real" array="False" size=""/>
+            <declare name="totalPoints" type="Real" array="False" size=""/>
+            <declare name="avrg" type="Real" array="False" size=""/>
+            <declare name="loopResponse" type="String" array="False" size=""/>
+            <assign variable="loopResponse" expression="&quot;y&quot;"/>
+            <while expression="loopResponse == &quot;y&quot;">
+                <input variable="lastName"/>
+                <input variable="score1"/>
+                <input variable="score2"/>
+                <input variable="score3"/>
+                <assign variable="avrg" expression="computeScore(score1, score2, score3)"/>
+                <assign variable="totalPoints" expression="score1 + score2 + score3"/>
+                <output expression="&quot;Last name: &quot; &amp; lastName" newline="True"/>
+                <output expression="&quot;Total Points: &quot; &amp; totalPoints" newline="True"/>
+                <output expression="&quot;Average exam score: &quot; &amp; avrg" newline="True"/>
+                <input variable="loopResponse"/>
+            </while>
+        </body>
+    </function>
+    <function name="computeScore" type="Real" variable="avrg">
+        <parameters>
+            <parameter name="score1" type="Real" array="False"/>
+            <parameter name="score2" type="Real" array="False"/>
+            <parameter name="score3" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="totalPoints" type="Real" array="False" size=""/>
+            <declare name="avrg" type="Real" array="False" size=""/>
+            <assign variable="totalPoints" expression="score1 + score2 + score3"/>
+            <assign variable="avrg" expression="totalPoints / 3"/>
+        </body>
+    </function>
+</flowgorithm>

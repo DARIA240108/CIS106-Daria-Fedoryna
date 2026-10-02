@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="problem4.flowchart"/>
+        <attribute name="authors" value="daria"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-02 04:24:19 PM"/>
+        <attribute name="created" value="ZGFyaWE7RFVGRlk7MjAyNi0xMC0wMjswNDowMTowNyBQTTsyMTY0"/>
+        <attribute name="edited" value="ZGFyaWE7RFVGRlk7MjAyNi0xMC0wMjswNDoyNDoxOSBQTTsxOzIyODA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="make" type="String" array="False" size=""/>
+            <declare name="model" type="String" array="False" size=""/>
+            <declare name="electric" type="String" array="False" size=""/>
+            <declare name="msrp" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <declare name="totalmsrp" type="Real" array="False" size=""/>
+            <declare name="totalSales" type="Real" array="False" size=""/>
+            <declare name="loopResponse" type="String" array="False" size=""/>
+            <assign variable="totalmsrp" expression="0"/>
+            <assign variable="totalSales" expression="0"/>
+            <assign variable="loopResponse" expression="&quot;y&quot;"/>
+            <while expression="loopResponse == &quot;y&quot;">
+                <input variable="make"/>
+                <input variable="model"/>
+                <input variable="electric"/>
+                <input variable="msrp"/>
+                <assign variable="total" expression="computePrice(msrp, make, model, electric)"/>
+                <output expression="&quot;Make: &quot; &amp; make" newline="True"/>
+                <output expression="&quot;Model: &quot; &amp; model" newline="True"/>
+                <output expression="&quot;MSRP: $&quot; &amp; msrp" newline="True"/>
+                <output expression="&quot;Out of the door price: $&quot; &amp; total" newline="True"/>
+                <assign variable="totalmsrp" expression="totalmsrp + msrp"/>
+                <assign variable="totalSales" expression="totalSales + total"/>
+                <input variable="loopResponse"/>
+            </while>
+            <output expression="&quot;Total MSRP: $&quot; &amp; totalmsrp" newline="True"/>
+            <output expression="&quot;Total sales price: $&quot; &amp; totalSales" newline="True"/>
+        </body>
+    </function>
+    <function name="computePrice" type="Real" variable="total">
+        <parameters>
+            <parameter name="msrp" type="Real" array="False"/>
+            <parameter name="make" type="String" array="False"/>
+            <parameter name="model" type="String" array="False"/>
+            <parameter name="electric" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="discountPercent" type="Real" array="False" size=""/>
+            <declare name="discount" type="Real" array="False" size=""/>
+            <declare name="newmsrp" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <if expression="electric == &quot;y&quot;">
+                <then>
+                    <assign variable="discountPercent" expression="0.30"/>
+                </then>
+                <else>
+                    <if expression="make == &quot;Toyota&quot; and model == &quot;Rav4&quot;">
+                        <then>
+                            <assign variable="discountPercent" expression="0.15"/>
+                        </then>
+                        <else>
+                            <if expression="make == &quot;Honda&quot; and model == &quot;Accord&quot;">
+                                <then>
+                                    <assign variable="discountPercent" expression="0.10"/>
+                                </then>
+                                <else>
+                                    <assign variable="discountPercent" expression="0.05"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="discount" expression="msrp * discountPercent"/>
+            <assign variable="newmsrp" expression="msrp - discount"/>
+            <assign variable="tax" expression="newmsrp * 0.07"/>
+            <assign variable="total" expression="newmsrp + tax"/>
+        </body>
+    </function>
+</flowgorithm>
